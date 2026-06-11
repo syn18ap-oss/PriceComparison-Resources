@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Heritage Map</title>
+  <meta name="description" content="World Heritage Map helps you discover UNESCO World Heritage Sites and keep track of the places you have visited.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #5f6c80;
+      --line: #dde3ee;
+      --accent: #1d6eea;
+      --accent-dark: #1552ad;
+      --green: #14945b;
+      --shadow: 0 20px 50px rgba(23, 32, 51, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0;
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .lang-button,
+    .link-button {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      padding: 8px 12px;
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .lang-button[aria-pressed="true"] {
+      border-color: var(--accent);
+      background: #eaf2ff;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .hero {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 72px 0 44px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 14px;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+      max-width: 640px;
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .primary-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .primary-link:hover {
+      background: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .device {
+      background: #101827;
+      border-radius: 28px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+      border: 1px solid #29364d;
+    }
+
+    .screen {
+      min-height: 520px;
+      border-radius: 20px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 25%, rgba(37, 111, 234, 0.25), transparent 28%),
+        radial-gradient(circle at 78% 45%, rgba(20, 148, 91, 0.24), transparent 24%),
+        linear-gradient(160deg, #162033 0%, #1d2b45 52%, #233655 100%);
+      position: relative;
+      color: #fff;
+    }
+
+    .search {
+      position: absolute;
+      top: 22px;
+      left: 18px;
+      right: 18px;
+      min-height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.94);
+      color: #60708a;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      font-size: 14px;
+    }
+
+    .marker {
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: #46d47c;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 0 8px rgba(70, 212, 124, 0.16), 0 0 22px rgba(70, 212, 124, 0.9);
+    }
+
+    .marker.one { top: 32%; left: 22%; }
+    .marker.two { top: 46%; left: 64%; background: #5aa7ff; box-shadow: 0 0 0 8px rgba(90, 167, 255, 0.16), 0 0 22px rgba(90, 167, 255, 0.9); }
+    .marker.three { top: 63%; left: 38%; background: #f3b84d; box-shadow: 0 0 0 8px rgba(243, 184, 77, 0.16), 0 0 22px rgba(243, 184, 77, 0.9); }
+
+    .sheet {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 20px;
+      border-radius: 24px 24px 0 0;
+      background: rgba(255, 255, 255, 0.97);
+      color: var(--text);
+    }
+
+    .sheet h2 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .sheet p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .section {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 34px 0 64px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .feature {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+    }
+
+    .feature h2 {
+      font-size: 20px;
+      margin: 0 0 8px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    [data-lang] {
+      display: none;
+    }
+
+    html[data-active-lang="en"] [data-lang="en"],
+    html[data-active-lang="ja"] [data-lang="ja"] {
+      display: block;
+    }
+
+    html[data-active-lang="en"] .inline[data-lang="en"],
+    html[data-active-lang="ja"] .inline[data-lang="ja"] {
+      display: inline;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 48px;
+      }
+
+      .device {
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .screen {
+        min-height: 470px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="./index.html">World Heritage Map</a>
+        <div class="nav-actions">
+          <a class="link-button" href="./privacy.html">
+            <span class="inline" data-lang="en">Privacy Policy</span>
+            <span class="inline" data-lang="ja">プライバシーポリシー</span>
+          </a>
+          <button class="lang-button" type="button" data-set-lang="en" aria-pressed="true">EN</button>
+          <button class="lang-button" type="button" data-set-lang="ja" aria-pressed="false">日本語</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div data-lang="en">
+          <p class="eyebrow">UNESCO World Heritage travel log</p>
+          <h1>World Heritage Map</h1>
+          <p class="lead">Discover World Heritage Sites around the world, read short introductions, and keep track of the places you have visited.</p>
+          <div class="cta-row">
+            <a class="primary-link" href="./privacy.html">View Privacy Policy</a>
+          </div>
+        </div>
+
+        <div data-lang="ja">
+          <p class="eyebrow">ユネスコ世界遺産の訪問ログ</p>
+          <h1>World Heritage Map</h1>
+          <p class="lead">世界中の世界遺産を地図で探し、短い解説を読みながら、自分が訪れた場所を記録できるアプリです。</p>
+          <div class="cta-row">
+            <a class="primary-link" href="./privacy.html">プライバシーポリシーを見る</a>
+          </div>
+        </div>
+
+        <div class="device" aria-hidden="true">
+          <div class="screen">
+            <div class="search">Search World Heritage Sites</div>
+            <div class="marker one"></div>
+            <div class="marker two"></div>
+            <div class="marker three"></div>
+            <div class="sheet">
+              <h2>Historic Sanctuary</h2>
+              <p>Explore sites, mark visits, and see your progress on the map.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Features">
+        <div class="features" data-lang="en">
+          <article class="feature">
+            <h2>Explore by map</h2>
+            <p>Browse World Heritage Sites visually and find nearby places of interest.</p>
+          </article>
+          <article class="feature">
+            <h2>Search quickly</h2>
+            <p>Look up sites by name, country, or region when planning a trip.</p>
+          </article>
+          <article class="feature">
+            <h2>Track visits</h2>
+            <p>Mark the places you have visited and build your personal heritage log.</p>
+          </article>
+        </div>
+
+        <div class="features" data-lang="ja">
+          <article class="feature">
+            <h2>地図で探す</h2>
+            <p>世界遺産を地図上で確認し、気になる場所を直感的に探せます。</p>
+          </article>
+          <article class="feature">
+            <h2>すばやく検索</h2>
+            <p>名称、国、地域から世界遺産を探し、旅行計画にも活用できます。</p>
+          </article>
+          <article class="feature">
+            <h2>訪問を記録</h2>
+            <p>訪れた世界遺産を記録し、自分だけの世界遺産ログを作れます。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <span>&copy; <span id="year"></span> World Heritage Map</span>
+        <a href="./privacy.html">
+          <span class="inline" data-lang="en">Privacy Policy</span>
+          <span class="inline" data-lang="ja">プライバシーポリシー</span>
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const supportedLanguages = ["en", "ja"];
+    const params = new URLSearchParams(window.location.search);
+    const savedLanguage = localStorage.getItem("language");
+    const browserLanguage = navigator.language && navigator.language.startsWith("ja") ? "ja" : "en";
+    const initialLanguage = supportedLanguages.includes(params.get("lang"))
+      ? params.get("lang")
+      : savedLanguage || browserLanguage;
+
+    function setLanguage(language) {
+      document.documentElement.dataset.activeLang = language;
+      document.documentElement.lang = language;
+      localStorage.setItem("language", language);
+      document.querySelectorAll("[data-set-lang]").forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.setLang === language));
+      });
+    }
+
+    document.querySelectorAll("[data-set-lang]").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.setLang));
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    setLanguage(initialLanguage);
+  </script>
+</body>
+</html>
