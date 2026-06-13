@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="ja" data-active-lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>プライバシーポリシー | 料金比較計算機</title>
+  <meta name="description" content="料金比較計算機 / Best Deal Finder のプライバシーポリシーです。">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #5f6c80;
+      --line: #dde3ee;
+      --accent: #1769e0;
+      --accent-dark: #114fa8;
+      --gold: #9a6b17;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      width: min(920px, calc(100% - 32px));
+      min-height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .link-button,
+    .lang-button {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      padding: 8px 12px;
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .lang-button[aria-pressed="true"] {
+      border-color: var(--accent);
+      background: #eaf2ff;
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 52px 0 72px;
+    }
+
+    .policy {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 48px);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .updated {
+      margin: 12px 0 32px;
+      color: var(--muted);
+    }
+
+    h2 {
+      margin: 34px 0 10px;
+      font-size: 22px;
+      line-height: 1.35;
+    }
+
+    p,
+    li {
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    .note {
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      background: #eef5ff;
+      color: var(--text);
+      border-radius: 4px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    [data-lang] {
+      display: none;
+    }
+
+    html[data-active-lang="en"] [data-lang="en"],
+    html[data-active-lang="ja"] [data-lang="ja"] {
+      display: block;
+    }
+
+    html[data-active-lang="en"] .inline[data-lang="en"],
+    html[data-active-lang="ja"] .inline[data-lang="ja"] {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="../index.html">
+        <span class="inline" data-lang="ja">料金比較計算機</span>
+        <span class="inline" data-lang="en">Best Deal Finder</span>
+      </a>
+      <div class="nav-actions">
+        <a class="link-button" href="../index.html">
+          <span class="inline" data-lang="ja">アプリ一覧</span>
+          <span class="inline" data-lang="en">Apps</span>
+        </a>
+        <button class="lang-button" type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        <button class="lang-button" type="button" data-set-lang="ja" aria-pressed="true">日本語</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <article class="policy" data-lang="ja">
+      <p class="eyebrow">料金比較計算機</p>
+      <h1>プライバシーポリシー</h1>
+      <p class="updated">制定日: 2026年1月9日 / 改定日: 2026年1月19日</p>
+
+      <p>本プライバシーポリシーは、料金比較計算機における利用者情報の取り扱いについて説明するものです。</p>
+
+      <h2>利用者情報の取得について</h2>
+      <p>本アプリ自体が、利用者の氏名、連絡先、住所などの個人情報を直接取得または収集することはありません。ただし、広告配信のため、第三者が提供する広告サービスを利用しています。</p>
+
+      <h2>広告の配信とデータの利用について</h2>
+      <p>本アプリでは、Google Inc. が提供する広告配信サービス「AdMob」を利用しています。広告配信、広告効果の測定、不正防止、サービス改善などの目的で、以下のような情報が自動的に取得される場合があります。</p>
+      <ul>
+        <li>デバイス識別子、広告IDなどの端末情報</li>
+        <li>広告の表示回数、クリック数などのアプリ内操作情報</li>
+      </ul>
+      <p>これらの情報は、広告の最適化および広告効果の測定に利用されます。Googleによる情報の取り扱いについては、Googleのプライバシーポリシーおよび関連規約をご確認ください。</p>
+
+      <h2>入力データの保存について</h2>
+      <p>利用者が計算のために入力した数値などのデータは、利用者の端末内でのみ扱われます。開発者が管理する外部サーバーへ送信されることはありません。</p>
+
+      <h2>お問い合わせ</h2>
+      <p>本アプリまたは本プライバシーポリシーに関するお問い合わせは、以下までお願いいたします。</p>
+      <p class="note"><a href="mailto:syn.18ap@gmail.com">syn.18ap@gmail.com</a></p>
+
+      <h2>本ポリシーの変更について</h2>
+      <p>本ポリシーの内容は、法令の改正、利用サービスの変更、アプリ機能の変更などに応じて、必要に応じて改定されることがあります。変更後の内容は本ページに掲載します。</p>
+    </article>
+
+    <article class="policy" data-lang="en">
+      <p class="eyebrow">Best Deal Finder</p>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Effective Date: January 9, 2026 / Revised Date: January 19, 2026</p>
+
+      <p>This Privacy Policy explains how Best Deal Finder handles user information when you use the app.</p>
+
+      <h2>Collection of user information</h2>
+      <p>The app itself does not directly collect personal information such as your name, contact details, or address. However, the app uses third-party advertising services as described below.</p>
+
+      <h2>Advertising and data use</h2>
+      <p>The app uses AdMob, an advertising service provided by Google Inc. For ad delivery, ad measurement, fraud prevention, and service improvement, information such as the following may be collected automatically.</p>
+      <ul>
+        <li>Device information, including device identifiers and advertising IDs</li>
+        <li>In-app activity information, such as ad impressions and clicks</li>
+      </ul>
+      <p>This information is used to optimize advertisements and measure ad effectiveness. For details about how Google handles data, please review Google's Privacy Policy and related terms.</p>
+
+      <h2>Data entered in the app</h2>
+      <p>Numerical values and other data entered by users for calculations are handled only on the user's device. They are not sent to external servers managed by the developer.</p>
+
+      <h2>Contact</h2>
+      <p>If you have questions about this app or this Privacy Policy, please contact:</p>
+      <p class="note"><a href="mailto:syn.18ap@gmail.com">syn.18ap@gmail.com</a></p>
+
+      <h2>Changes to this policy</h2>
+      <p>This Privacy Policy may be updated as necessary due to changes in laws, third-party services, or app functionality. Any changes will be posted on this page.</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>&copy; <span id="year"></span> Seiyo Nakajima</span>
+      <a href="../index.html">
+        <span class="inline" data-lang="ja">アプリ一覧</span>
+        <span class="inline" data-lang="en">Apps</span>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const supportedLanguages = ["ja", "en"];
+    const params = new URLSearchParams(window.location.search);
+    const savedLanguage = localStorage.getItem("priceCompPrivacyLanguage");
+    const browserLanguage = navigator.language && navigator.language.startsWith("ja") ? "ja" : "en";
+    const initialLanguage = supportedLanguages.includes(params.get("lang"))
+      ? params.get("lang")
+      : savedLanguage || browserLanguage;
+
+    function setLanguage(language) {
+      document.documentElement.dataset.activeLang = language;
+      document.documentElement.lang = language;
+      localStorage.setItem("priceCompPrivacyLanguage", language);
+      document.querySelectorAll("[data-set-lang]").forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.setLang === language));
+      });
+    }
+
+    document.querySelectorAll("[data-set-lang]").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.setLang));
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    setLanguage(initialLanguage);
+  </script>
+</body>
+</html>
