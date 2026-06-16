@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ja" data-active-lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>プライバシーポリシー - Mapiq</title>
+  <meta name="description" content="Mapiqのプライバシーポリシーです。">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7f5;
+      --surface: #ffffff;
+      --text: #161616;
+      --muted: #686868;
+      --line: #e5e2dc;
+      --orange: #ff9638;
+      --orange-dark: #e87516;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a {
+      color: var(--orange-dark);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      width: min(920px, calc(100% - 32px));
+      min-height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .link-button,
+    .lang-button {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      padding: 8px 12px;
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .lang-button[aria-pressed="true"] {
+      border-color: rgba(255, 150, 56, 0.55);
+      background: #fff1e4;
+      color: var(--orange-dark);
+      font-weight: 800;
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 52px 0 72px;
+    }
+
+    .policy {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 48px);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .updated {
+      margin: 12px 0 32px;
+      color: var(--muted);
+    }
+
+    h2 {
+      margin: 34px 0 10px;
+      font-size: 22px;
+    }
+
+    p,
+    li {
+      color: var(--muted);
+    }
+
+    ul { padding-left: 22px; }
+
+    .note {
+      border-left: 4px solid var(--orange);
+      padding: 12px 16px;
+      background: #fff4e9;
+      color: var(--text);
+      border-radius: 4px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    [data-lang] { display: none; }
+    html[data-active-lang="ja"] [data-lang="ja"],
+    html[data-active-lang="en"] [data-lang="en"] { display: block; }
+    html[data-active-lang="ja"] .inline[data-lang="ja"],
+    html[data-active-lang="en"] .inline[data-lang="en"] { display: inline; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="./index.html">Mapiq</a>
+      <div class="nav-actions">
+        <a class="link-button" href="./index.html">
+          <span class="inline" data-lang="ja">ホーム</span>
+          <span class="inline" data-lang="en">Home</span>
+        </a>
+        <button class="lang-button" type="button" data-set-lang="ja" aria-pressed="true">日本語</button>
+        <button class="lang-button" type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <article class="policy" data-lang="ja">
+      <h1>プライバシーポリシー</h1>
+      <p class="updated">最終更新日: 2026年6月16日</p>
+
+      <p>本プライバシーポリシーは、Mapiq（以下「本アプリ」）におけるユーザー情報の取り扱いについて説明するものです。</p>
+
+      <h2>取得・保存する情報</h2>
+      <p>本アプリは、機能提供のために以下の情報を取得または保存する場合があります。</p>
+      <ul>
+        <li>アカウント登録・ログインに必要なメールアドレス等の認証情報</li>
+        <li>霧を晴らした地点、移動距離、クエスト進捗、称号、統計情報</li>
+        <li>ユーザーが登録した写真、ステッカー、メモ、登録日時、登録地点</li>
+        <li>通知配信に必要な端末識別子またはFCMトークン</li>
+        <li>広告配信や不正防止、品質改善に必要な端末情報、利用状況、クラッシュ情報等</li>
+      </ul>
+
+      <h2>位置情報</h2>
+      <p>本アプリは、訪れた場所の霧を晴らす機能、移動距離の計測、現在地表示、写真・ステッカー登録地点の記録のために、ユーザーの位置情報を使用します。バックグラウンドでの位置情報利用を許可した場合、アプリを閉じている間も位置情報を利用することがあります。</p>
+      <p>位置情報の許可は、端末の設定アプリからいつでも変更できます。ただし、位置情報を無効にした場合、本アプリの主要機能の一部が利用できなくなることがあります。</p>
+
+      <h2>写真・メモ・ステッカー</h2>
+      <p>ユーザーが登録した写真、メモ、ステッカー、登録地点、登録日時は、地図上に表示するために保存されます。写真はFirebase Storageに保存される場合があります。ユーザーが削除操作を行った場合、アプリ上の表示および関連データを削除します。</p>
+
+      <h2>アカウントとクラウド保存</h2>
+      <p>本アプリは、アカウント登録、ログイン、データ保存、通知配信等のためにFirebase Authentication、Cloud Firestore、Firebase Storage、Firebase Cloud Messaging、Cloud Functionsを使用します。これらのサービスでは、Google LLCが提供する基盤上で情報が処理されます。</p>
+
+      <h2>通知</h2>
+      <p>本アプリは、クエスト達成や統計達成などを知らせるため、プッシュ通知を送信する場合があります。通知の許可は、端末の設定アプリからいつでも変更できます。また、アプリ内の通知設定で通知種別を選択できる場合があります。</p>
+
+      <h2>広告</h2>
+      <p>本アプリは、広告表示のためにGoogle AdMobを使用します。Google Mobile Ads SDKは、広告配信、分析、不正防止、サービス改善などの目的で、IPアドレス、端末識別子、広告データ、アプリ操作情報、クラッシュログ、パフォーマンスデータ等を収集する場合があります。</p>
+      <p>Googleによる情報の取り扱いについては、以下をご確認ください。</p>
+      <ul>
+        <li><a href="https://policies.google.com/privacy?hl=ja" rel="noopener">Google プライバシーポリシー</a></li>
+        <li><a href="https://developers.google.com/admob/ios/privacy/data-disclosure?hl=ja" rel="noopener">Google Mobile Ads SDKのデータ開示</a></li>
+        <li><a href="https://firebase.google.com/support/privacy?hl=ja" rel="noopener">Firebaseのプライバシーとセキュリティ</a></li>
+      </ul>
+
+      <h2>利用目的</h2>
+      <p>取得した情報は、以下の目的で利用します。</p>
+      <ul>
+        <li>本アプリの機能提供、データ同期、バックアップ</li>
+        <li>写真、ステッカー、探索状況、クエスト、統計の表示</li>
+        <li>通知の送信および通知設定の管理</li>
+        <li>広告の表示、不正利用の防止、アプリの品質改善</li>
+        <li>お問い合わせ対応</li>
+      </ul>
+
+      <h2>第三者提供</h2>
+      <p>開発者は、法令に基づく場合を除き、ユーザーの個人情報を第三者に販売しません。ただし、本アプリの提供に必要な範囲で、Firebase、Google AdMob、Apple MapKit等の第三者サービスが情報を処理する場合があります。</p>
+
+      <h2>データの削除</h2>
+      <p>ユーザーは、アプリ内の削除機能により、登録した写真やステッカー等を削除できます。アカウントやクラウド上のデータ削除を希望する場合は、下記のお問い合わせ先までご連絡ください。</p>
+
+      <h2>子どものプライバシー</h2>
+      <p>本アプリは、13歳未満の子どもを主な対象としたものではありません。13歳未満の子どもが利用する場合は、保護者の同意と管理のもとで利用してください。</p>
+
+      <h2>本ポリシーの変更</h2>
+      <p>本プライバシーポリシーは、必要に応じて変更されることがあります。変更後の内容は、本ページに掲載し、更新日を変更します。</p>
+
+      <h2>お問い合わせ</h2>
+      <p>本プライバシーポリシーに関するお問い合わせは、以下までお願いいたします。</p>
+      <p class="note">syn.18ap@gmail.com</p>
+    </article>
+
+    <article class="policy" data-lang="en">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: June 16, 2026</p>
+
+      <p>This Privacy Policy explains how Mapiq handles information when you use the app.</p>
+
+      <h2>Information collected or stored</h2>
+      <p>The app may collect or store the following information to provide its features:</p>
+      <ul>
+        <li>Authentication information such as an email address used for account registration and login</li>
+        <li>Cleared map locations, travel distance, quest progress, titles, and statistics</li>
+        <li>Photos, stickers, notes, creation dates, and location data that you register in the app</li>
+        <li>Device identifiers or FCM tokens needed to deliver push notifications</li>
+        <li>Device information, usage data, crash logs, and performance data needed for ads, fraud prevention, and quality improvement</li>
+      </ul>
+
+      <h2>Location information</h2>
+      <p>Mapiq uses your location to clear fog from places you visit, measure travel distance, show your current location, and save the location of photos and stickers. If you allow background location access, the app may use location information while the app is not actively open.</p>
+      <p>You can change location permissions at any time in the device Settings app. Some core features may not work properly if location access is disabled.</p>
+
+      <h2>Photos, notes, and stickers</h2>
+      <p>Photos, notes, stickers, locations, and creation dates that you register are stored to display them on your map. Photos may be stored in Firebase Storage. If you delete content in the app, the related app data will be removed from the app display and associated storage.</p>
+
+      <h2>Accounts and cloud storage</h2>
+      <p>The app uses Firebase Authentication, Cloud Firestore, Firebase Storage, Firebase Cloud Messaging, and Cloud Functions for account registration, login, data storage, synchronization, and push notifications. These services process information on infrastructure provided by Google LLC.</p>
+
+      <h2>Notifications</h2>
+      <p>The app may send push notifications for events such as quest completion or statistics achievements. You can change notification permissions in the device Settings app. The app may also provide settings to choose which notification categories you receive.</p>
+
+      <h2>Advertising</h2>
+      <p>The app uses Google AdMob to display ads. Google Mobile Ads SDK may collect information such as IP address, device identifiers, advertising data, app interaction data, crash logs, and performance data for advertising, analytics, fraud prevention, and service improvement purposes.</p>
+      <p>For more information about Google's data practices, please review:</p>
+      <ul>
+        <li><a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a></li>
+        <li><a href="https://developers.google.com/admob/ios/privacy/data-disclosure" rel="noopener">Google Mobile Ads SDK data disclosure</a></li>
+        <li><a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy and Security</a></li>
+      </ul>
+
+      <h2>Purpose of use</h2>
+      <p>The information is used for the following purposes:</p>
+      <ul>
+        <li>Providing app features, data synchronization, and backup</li>
+        <li>Displaying photos, stickers, exploration progress, quests, and statistics</li>
+        <li>Sending notifications and managing notification settings</li>
+        <li>Displaying ads, preventing fraud, and improving app quality</li>
+        <li>Responding to inquiries</li>
+      </ul>
+
+      <h2>Sharing with third parties</h2>
+      <p>The developer does not sell your personal information. However, third-party services such as Firebase, Google AdMob, and Apple MapKit may process information as necessary to provide the app.</p>
+
+      <h2>Data deletion</h2>
+      <p>You can delete registered photos and stickers using the app's delete features. If you would like to request deletion of your account or cloud data, please contact us at the email address below.</p>
+
+      <h2>Children's privacy</h2>
+      <p>The app is not primarily directed to children under the age of 13. If a child under 13 uses the app, it should be under the consent and supervision of a parent or guardian.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>This Privacy Policy may be updated from time to time. Any changes will be posted on this page with an updated date.</p>
+
+      <h2>Contact</h2>
+      <p>If you have questions about this Privacy Policy, please contact:</p>
+      <p class="note">syn.18ap@gmail.com</p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Seiyo Nakajima</span>
+      <a href="./index.html">
+        <span class="inline" data-lang="ja">ホーム</span>
+        <span class="inline" data-lang="en">Home</span>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const buttons = document.querySelectorAll("[data-set-lang]");
+    const saved = localStorage.getItem("mapiq-lang");
+    const browserLang = (navigator.language || "").toLowerCase().startsWith("ja") ? "ja" : "en";
+    const initial = saved || browserLang;
+
+    function setLanguage(lang) {
+      root.dataset.activeLang = lang;
+      document.documentElement.lang = lang;
+      localStorage.setItem("mapiq-lang", lang);
+      buttons.forEach((button) => {
+        button.setAttribute("aria-pressed", button.dataset.setLang === lang ? "true" : "false");
+      });
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.setLang));
+    });
+    setLanguage(initial);
+  </script>
+</body>
+</html>
