@@ -189,12 +189,25 @@
   <main>
     <article class="policy" data-lang="en">
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: June 12, 2026</p>
+      <p class="updated">Last updated: August 25, 2026</p>
 
       <p>This Privacy Policy explains how World Heritage Map handles information when you use the app.</p>
 
-      <h2>Information the app stores</h2>
-      <p>World Heritage Map lets you mark World Heritage Sites that you have visited. This visit information is stored on your device for app functionality. The developer does not operate an account system and does not receive this information on a developer-managed server.</p>
+      <h2>Information we collect and store</h2>
+      <p>World Heritage Map can be used without creating an account. In guest mode, visit dates, saved lists, viewing history, and related settings are stored locally on your device.</p>
+      <p>If you create or use an account, the app handles the following information:</p>
+      <ul>
+        <li><strong>Account and authentication information:</strong> your email address, a unique account identifier, your sign-in method, and authentication status. If you use Google Sign-In or Sign in with Apple, profile information made available by that provider, such as your name or profile image URL, may also be associated with your Firebase Authentication account.</li>
+        <li><strong>Account-linked app data:</strong> World Heritage Site identifiers, visit dates, ratings, notes, uploaded photos, saved lists, viewing history, and related settings.</li>
+      </ul>
+      <p>Account information is processed using Firebase Authentication. Account-linked app data other than photo files is stored in Cloud Firestore, and uploaded photos are stored in Cloud Storage for Firebase. The app may also keep local copies or caches on your device so that content can be displayed quickly.</p>
+      <p>When a new account is created, eligible guest data already stored on the device is associated with and uploaded to that account. Passwords are processed by Firebase Authentication; the app and developer do not store your password in readable form.</p>
+
+      <h2>How we use information</h2>
+      <p>We use this information to create and authenticate accounts, send verification and account-management emails, provide and synchronize your records across installations or devices, restore account-linked data after sign-in, maintain app security, respond to support requests, and operate the features you request.</p>
+
+      <h2>Photos</h2>
+      <p>When you choose to add a photo to a visit record, the app uses the system photo picker. The app receives only the photo you explicitly select through the picker and uploads it to your account storage. It does not use the picker to access other photos in your library.</p>
 
       <h2>Location information</h2>
       <p>If you grant location permission, the app may use your device location to show your current position on the map and help you explore nearby places. Your precise location is not stored on a developer-managed server by World Heritage Map.</p>
@@ -208,13 +221,38 @@
       </ul>
 
       <h2>Third-party services</h2>
-      <p>The app may use Apple MapKit and Google AdMob. These services may process information according to their own privacy policies and platform rules.</p>
+      <p>The app uses the following third-party services. These providers may process information as necessary to provide their services under their own privacy policies and terms:</p>
+      <ul>
+        <li>Google Firebase Authentication, Cloud Firestore, and Cloud Storage for Firebase for account authentication and cloud storage</li>
+        <li>Google Sign-In for optional Google account authentication</li>
+        <li>Sign in with Apple for optional Apple Account authentication</li>
+        <li>Apple MapKit for map features</li>
+        <li>Google AdMob for advertising</li>
+      </ul>
+      <p>For more information, please review:</p>
+      <ul>
+        <li><a href="https://firebase.google.com/support/privacy" rel="noopener">Privacy and Security in Firebase</a></li>
+        <li><a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a></li>
+        <li><a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple Privacy Policy</a></li>
+      </ul>
 
       <h2>Data sharing</h2>
-      <p>The developer does not sell your personal information. Information handled by third-party services, such as Google AdMob, is processed according to the privacy policies and terms of those services.</p>
+      <p>The developer does not sell your personal information. Information is provided to the service providers listed above only as needed to provide authentication, storage, maps, advertising, security, and related app functionality, or when required by law. The app does not intentionally provide your email address, visit-record notes, ratings, or uploaded photos to Google AdMob for advertising.</p>
+      <p>The developer selects service providers that are required to protect information under their applicable terms, privacy commitments, and laws, and expects them to handle information consistently with the protections described in this policy.</p>
+
+      <h2>Data retention and deletion</h2>
+      <p>Guest data remains on your device until it is deleted with the app's data, cleared by the app, or transferred to a newly created account. Account-linked information is retained while your account is active or as needed to provide the service.</p>
+      <p>You can delete individual visit records and their photos in the app. You can also delete your account from the Settings tab. Account deletion removes the authentication account and the account-linked visit records, photos, saved lists, and viewing history stored in the app's cloud services. Some information may remain temporarily in service-provider backups or be retained when required for security, fraud prevention, dispute resolution, or legal compliance.</p>
+      <p>You can withdraw location access at any time in iOS Settings. For questions or assistance with data deletion, contact the address below.</p>
+
+      <h2>Security</h2>
+      <p>We use reasonable technical and organizational safeguards, including account-based access controls and the security features provided by Firebase. However, no method of electronic transmission or storage is completely secure.</p>
+
+      <h2>International processing</h2>
+      <p>Information may be processed in countries or regions where the third-party service providers listed above operate. Their handling of information is governed by their applicable terms, privacy commitments, and laws.</p>
 
       <h2>Children's privacy</h2>
-      <p>World Heritage Map is not directed to children under the age of 13. The app does not knowingly collect personal information from children through a developer-managed account system.</p>
+      <p>World Heritage Map is not directed to children under the age of 13. The developer does not knowingly collect personal information from children under 13. If you believe that a child has provided personal information, please contact us so that we can take appropriate action.</p>
 
       <h2>Changes to this policy</h2>
       <p>This Privacy Policy may be updated from time to time. Any changes will be posted on this page with an updated date.</p>
@@ -226,12 +264,25 @@
 
     <article class="policy" data-lang="ja">
       <h1>プライバシーポリシー</h1>
-      <p class="updated">最終更新日: 2026年6月12日</p>
+      <p class="updated">最終更新日: 2026年8月25日</p>
 
       <p>本プライバシーポリシーは、World Heritage Mapの利用における情報の取り扱いについて説明するものです。</p>
 
-      <h2>アプリ内に保存される情報</h2>
-      <p>World Heritage Mapでは、訪れた世界遺産を記録できます。この訪問記録は、アプリの機能を提供するために端末内に保存されます。開発者はアカウント機能を提供しておらず、この情報を開発者が管理するサーバーで受信・保存することはありません。</p>
+      <h2>収集・保存する情報</h2>
+      <p>World Heritage Mapは、アカウントを作成せずに利用できます。ゲスト利用中は、訪問日、保存リスト、閲覧履歴および関連する設定を端末内に保存します。</p>
+      <p>アカウントを作成または利用する場合、本アプリは以下の情報を取り扱います。</p>
+      <ul>
+        <li><strong>アカウント・認証情報：</strong>メールアドレス、アカウント固有の識別子、ログイン方法および認証状態。GoogleでログインまたはAppleでサインインを利用した場合は、氏名やプロフィール画像URLなど、各認証サービスから提供されるプロフィール情報がFirebase Authenticationのアカウントに関連付けられる場合があります。</li>
+        <li><strong>アカウントに紐づくアプリデータ：</strong>世界遺産の識別子、訪問日、評価、ノート、アップロードした写真、保存リスト、閲覧履歴および関連する設定。</li>
+      </ul>
+      <p>アカウント情報はFirebase Authenticationで処理します。写真ファイル以外のアカウントに紐づくアプリデータはCloud Firestoreに、アップロードした写真はCloud Storage for Firebaseに保存します。また、すばやく表示するため、これらのデータの一部を端末内に保存またはキャッシュする場合があります。</p>
+      <p>新しいアカウントを作成した場合、端末内に保存されている移行対象のゲストデータをそのアカウントに紐づけてアップロードします。パスワードはFirebase Authenticationによって処理され、アプリおよび開発者が読み取り可能な状態で保存することはありません。</p>
+
+      <h2>情報の利用目的</h2>
+      <p>これらの情報は、アカウントの作成・認証、確認メールやアカウント管理メールの送信、記録の保存・同期、再インストール後または別端末でのログイン時のデータ復元、アプリの安全性の維持、お問い合わせ対応、およびユーザーが利用する機能の提供のために使用します。</p>
+
+      <h2>写真</h2>
+      <p>訪問記録に写真を追加する場合、本アプリはiOS標準の写真選択画面を使用します。アプリが受け取ってアカウント用ストレージへアップロードするのは、ユーザーが写真選択画面で明示的に選択した写真のみです。この方法により、写真ライブラリ内のその他の写真へアクセスすることはありません。</p>
 
       <h2>位置情報</h2>
       <p>ユーザーが位置情報の利用を許可した場合、アプリは現在地を地図上に表示したり、周辺の場所を確認しやすくしたりする目的で、端末の位置情報を使用することがあります。World Heritage Mapは、ユーザーの正確な位置情報を開発者が管理するサーバーに保存しません。</p>
@@ -245,13 +296,38 @@
       </ul>
 
       <h2>第三者サービス</h2>
-      <p>本アプリでは、Apple MapKitおよびGoogle AdMobを使用する場合があります。これらのサービスでは、それぞれのプライバシーポリシーや利用規約に従って情報が処理されることがあります。</p>
+      <p>本アプリは以下の第三者サービスを使用します。各事業者は、サービスの提供に必要な範囲で、それぞれのプライバシーポリシーおよび利用規約に従って情報を処理する場合があります。</p>
+      <ul>
+        <li>アカウント認証およびクラウド保存のためのGoogle Firebase Authentication、Cloud FirestoreおよびCloud Storage for Firebase</li>
+        <li>任意のGoogleアカウント認証のためのGoogleでログイン</li>
+        <li>任意のApple Account認証のためのAppleでサインイン</li>
+        <li>地図機能のためのApple MapKit</li>
+        <li>広告表示のためのGoogle AdMob</li>
+      </ul>
+      <p>詳細については、以下をご確認ください。</p>
+      <ul>
+        <li><a href="https://firebase.google.com/support/privacy?hl=ja" rel="noopener">Firebaseのプライバシーとセキュリティ</a></li>
+        <li><a href="https://policies.google.com/privacy?hl=ja" rel="noopener">Google プライバシーポリシー</a></li>
+        <li><a href="https://www.apple.com/jp/legal/privacy/" rel="noopener">Apple プライバシーポリシー</a></li>
+      </ul>
 
       <h2>情報の共有</h2>
-      <p>開発者は、ユーザーの個人情報を販売しません。Google AdMobなどの第三者サービスによって取り扱われる情報は、各サービスのプライバシーポリシーおよび利用規約に従って処理されます。</p>
+      <p>開発者は、ユーザーの個人情報を販売しません。認証、保存、地図、広告、セキュリティおよび関連するアプリ機能の提供に必要な範囲、または法令により必要な場合に限り、上記のサービス事業者へ情報を提供します。本アプリは、メールアドレス、訪問記録のノート・評価、アップロードした写真を、広告目的でGoogle AdMobへ意図的に提供することはありません。</p>
+      <p>開発者は、適用される契約条件、プライバシー上の取り組みおよび法令に基づいて情報を保護することが求められるサービス事業者を選定し、本ポリシーに記載した保護と整合する形で情報が取り扱われることを求めます。</p>
+
+      <h2>保存期間と削除</h2>
+      <p>ゲストデータは、アプリのデータとともに削除されるか、アプリによって消去されるか、新しいアカウントへ移行されるまで端末内に保存されます。アカウントに紐づく情報は、アカウントが有効な間、またはサービス提供に必要な期間保存します。</p>
+      <p>アプリ内で個別の訪問記録とその写真を削除できます。また、設定タブからアカウントを削除できます。アカウントを削除すると、認証アカウントならびに本アプリのクラウドサービスに保存された訪問記録、写真、保存リストおよび閲覧履歴を削除します。ただし、サービス事業者のバックアップに一時的に残る場合や、セキュリティ、不正防止、紛争対応または法令遵守のために保存が必要となる場合があります。</p>
+      <p>位置情報の利用許可は、iOSの設定からいつでも取り消せます。データ削除に関するご質問やサポートが必要な場合は、下記の連絡先までお問い合わせください。</p>
+
+      <h2>安全管理</h2>
+      <p>本アプリでは、アカウントごとのアクセス制御やFirebaseが提供するセキュリティ機能など、合理的な技術的・組織的安全管理措置を講じます。ただし、電子的な送信または保存方法の完全な安全性を保証することはできません。</p>
+
+      <h2>国外での処理</h2>
+      <p>情報は、上記の第三者サービス事業者が事業を行う国または地域で処理される場合があります。その場合、各事業者に適用される契約条件、プライバシー上の取り組みおよび法令に従って取り扱われます。</p>
 
       <h2>子どものプライバシー</h2>
-      <p>World Heritage Mapは、13歳未満の子どもを対象としたアプリではありません。また、開発者が管理するアカウント機能を通じて、子どもの個人情報を意図的に収集することはありません。</p>
+      <p>World Heritage Mapは、13歳未満の子どもを対象としたアプリではありません。開発者は、13歳未満の子どもの個人情報を意図的に収集しません。子どもが個人情報を提供した可能性がある場合は、適切な対応を行うため下記の連絡先までお知らせください。</p>
 
       <h2>本ポリシーの変更</h2>
       <p>本プライバシーポリシーは、必要に応じて変更されることがあります。変更後の内容は、本ページに掲載し、更新日を変更します。</p>
