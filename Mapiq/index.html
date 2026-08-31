@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mapiq</title>
-  <meta name="description" content="Mapiqは、訪れた場所の霧を晴らし、写真やステッカーで自分だけの地図を育てる探索記録アプリです。">
+  <meta name="description" content="Mapiqは、写真・ステッカー・つぶやきを地図に残し、フレンドと共有やチャットを楽しめる位置情報SNSアプリです。">
   <style>
     :root {
       color-scheme: light;
@@ -174,22 +174,15 @@
       overflow: hidden;
       position: relative;
       background:
-        linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
-        linear-gradient(155deg, #bce8f6 0 28%, #eef6e7 28% 48%, #f5efe5 48% 62%, #d7efd0 62% 100%);
-      background-size: auto, 34px 34px, auto;
-    }
-
-    .fog {
-      position: absolute;
-      inset: 0;
-      background: rgba(42, 42, 42, 0.52);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 54%, 20% 51%, 30% 42%, 48% 48%, 64% 43%, 76% 35%, 92% 31%, 100% 34%, 100% 58%, 84% 57%, 70% 63%, 52% 61%, 34% 70%, 18% 66%, 0 74%);
+        linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.28) 1px, transparent 1px),
+        linear-gradient(155deg, #bfe8f4 0 25%, #eaf4e3 25% 47%, #f4eee2 47% 65%, #d5edce 65% 100%);
+      background-size: 34px 34px, 34px 34px, auto;
     }
 
     .city-label {
       position: absolute;
-      top: 34px;
+      top: 28px;
       left: 22px;
       color: #111;
       font-size: 34px;
@@ -203,43 +196,32 @@
 
     .photo-pin {
       position: absolute;
-      width: 82px;
-      height: 104px;
-      border: 4px solid #fff;
-      border-radius: 18px;
+      width: 90px;
+      height: 112px;
+      border: 7px solid #fff;
+      border-bottom-width: 16px;
+      border-radius: 4px;
       background:
         linear-gradient(150deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)),
         linear-gradient(135deg, #7ab3e5, #f6c56f 48%, #6ab66a);
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
     }
 
-    .photo-pin::after {
+    .photo-pin::before {
       content: "";
       position: absolute;
       left: 50%;
-      bottom: -17px;
-      width: 18px;
-      height: 18px;
-      background: #fff;
-      transform: translateX(-50%) rotate(45deg);
-      border-radius: 3px;
+      top: -31px;
+      width: 24px;
+      height: 58px;
+      background: rgba(255, 218, 125, 0.82);
+      transform: translateX(-50%) rotate(24deg);
+      box-shadow: 0 2px 5px rgba(79, 60, 19, 0.13);
     }
 
-    .photo-pin.one { top: 166px; left: 170px; transform: rotate(8deg); }
-    .photo-pin.two { top: 310px; left: 60px; transform: rotate(-9deg); }
-
-    .date-badge {
-      position: absolute;
-      top: -9px;
-      left: -9px;
-      padding: 3px 7px 4px;
-      border-radius: 7px;
-      background: #fff;
-      color: #111;
-      font-size: 15px;
-      font-weight: 900;
-      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.16);
-    }
+    .photo-pin.one { top: 160px; left: 174px; transform: rotate(8deg); }
+    .photo-pin.two { top: 332px; left: 52px; transform: rotate(-8deg); }
+    .photo-pin.friend { border-color: var(--orange); }
 
     .sticker {
       position: absolute;
@@ -252,8 +234,52 @@
         drop-shadow(0 10px 18px rgba(0, 0, 0, 0.22));
     }
 
-    .sticker.one { top: 252px; right: 48px; }
-    .sticker.two { bottom: 126px; left: 56px; }
+    .sticker.one { top: 276px; right: 42px; }
+    .sticker.two { bottom: 126px; left: 148px; }
+
+    .comment-pin {
+      position: absolute;
+      top: 118px;
+      left: 32px;
+      width: 124px;
+      padding: 10px 12px;
+      border: 4px solid var(--orange);
+      border-radius: 16px;
+      background: #fff;
+      color: #333;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.35;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+    }
+
+    .comment-pin::after {
+      content: "";
+      position: absolute;
+      left: 22px;
+      bottom: -10px;
+      width: 16px;
+      height: 16px;
+      background: #fff;
+      border-right: 4px solid var(--orange);
+      border-bottom: 4px solid var(--orange);
+      transform: rotate(45deg);
+    }
+
+    .follow-dot {
+      position: absolute;
+      right: 20px;
+      bottom: 112px;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #fff;
+      color: #1687dc;
+      font-size: 23px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+    }
 
     .bottom-bar {
       position: absolute;
@@ -284,6 +310,13 @@
       font-size: 42px;
       line-height: 1;
       box-shadow: 0 14px 26px rgba(255, 150, 56, 0.35);
+    }
+
+    .tab-icon {
+      display: block;
+      font-size: 18px;
+      line-height: 1.1;
+      margin-bottom: 3px;
     }
 
     .section {
@@ -400,18 +433,18 @@
     <section class="hero">
       <div>
         <div data-lang="ja">
-          <p class="eyebrow">Explore your own map</p>
-          <h1>歩いた場所が、<br>自分だけの地図になる。</h1>
-          <p class="lead">Mapiqは、訪れた場所の霧を晴らし、写真やステッカーを地図に残せる探索記録アプリです。毎日の移動が、少しずつ見える冒険に変わります。</p>
+          <p class="eyebrow">Share moments on the map</p>
+          <h1>思い出も、今の気分も、<br>地図の上に。</h1>
+          <p class="lead">Mapiqは、写真・ステッカー・24時間のつぶやきを場所と一緒に残せる位置情報SNSアプリです。フレンドの投稿を地図で見たり、そのままチャットで会話したりできます。</p>
           <div class="cta-row">
             <a class="primary-link" href="mailto:syn.18ap@gmail.com">お問い合わせ</a>
             <a class="secondary-link" href="./privacy.html">プライバシーポリシー</a>
           </div>
         </div>
         <div data-lang="en">
-          <p class="eyebrow">Explore your own map</p>
-          <h1>Turn your walks<br>into a personal map.</h1>
-          <p class="lead">Mapiq is an exploration journal app that clears fog from places you visit and lets you save photos and emoji stickers on your map.</p>
+          <p class="eyebrow">Share moments on the map</p>
+          <h1>Put memories and<br>little moments on the map.</h1>
+          <p class="lead">Mapiq is a location-based social app for saving photos, stickers, and 24-hour thoughts on a map. See what friends share nearby and continue the conversation in chat.</p>
           <div class="cta-row">
             <a class="primary-link" href="mailto:syn.18ap@gmail.com">Contact</a>
             <a class="secondary-link" href="./privacy.html">Privacy Policy</a>
@@ -422,17 +455,18 @@
       <div class="phone" aria-label="Mapiq app preview">
         <div class="screen">
           <div class="city-label">中央区</div>
-          <div class="photo-pin one"><span class="date-badge">16</span></div>
-          <div class="photo-pin two"><span class="date-badge">25</span></div>
+          <div class="comment-pin">この景色、また見に来たい</div>
+          <div class="photo-pin one"></div>
+          <div class="photo-pin two friend"></div>
           <div class="sticker one">☕️</div>
           <div class="sticker two">🏠</div>
-          <div class="fog"></div>
+          <div class="follow-dot">⌖</div>
           <div class="bottom-bar">
-            <div>マップ</div>
-            <div>クエスト</div>
+            <div><span class="tab-icon">⌖</span>マップ</div>
+            <div><span class="tab-icon">●</span>チャット</div>
             <div><div class="plus">+</div></div>
-            <div>統計</div>
-            <div>アカウント</div>
+            <div><span class="tab-icon">●</span>通知</div>
+            <div><span class="tab-icon">●</span>アカウント</div>
           </div>
         </div>
       </div>
@@ -441,29 +475,53 @@
     <section class="section">
       <div class="features">
         <article class="feature" data-lang="ja">
-          <h2>霧を晴らす</h2>
-          <p>実際に訪れた場所が地図上で開放され、市区町村ごとの探検率として記録されます。</p>
+          <h2>場所と一緒に残す</h2>
+          <p>写真やメモを、その瞬間の場所にピンとして保存。思い出を地図から振り返れます。</p>
         </article>
         <article class="feature" data-lang="ja">
-          <h2>写真を残す</h2>
-          <p>撮影した場所に写真ピンを置き、日付や地図と一緒に思い出を振り返れます。</p>
+          <h2>ステッカーで記録</h2>
+          <p>カフェ、旅行、学校など、場所に合ったステッカーを置いて自分の地図を育てられます。</p>
         </article>
         <article class="feature" data-lang="ja">
-          <h2>ステッカーで飾る</h2>
-          <p>お気に入りの場所に絵文字ステッカーを配置して、自分だけの地図に育てられます。</p>
+          <h2>今をつぶやく</h2>
+          <p>文章だけの気軽な投稿を地図へ。つぶやきは24時間表示され、フレンドにも共有できます。</p>
+        </article>
+        <article class="feature" data-lang="ja">
+          <h2>フレンドとつながる</h2>
+          <p>@IDでフレンドを探して追加。公開した写真やつぶやきを、お互いの地図で楽しめます。</p>
+        </article>
+        <article class="feature" data-lang="ja">
+          <h2>チャットで話す</h2>
+          <p>メッセージや写真を送り合い、地図上の投稿についてそのまま会話できます。</p>
+        </article>
+        <article class="feature" data-lang="ja">
+          <h2>自分好みの地図</h2>
+          <p>標準マップと衛星マップを切り替え可能。移動中は現在地を追従して表示します。</p>
         </article>
 
         <article class="feature" data-lang="en">
-          <h2>Clear the fog</h2>
-          <p>Places you actually visit are revealed on the map and counted toward your exploration stats.</p>
+          <h2>Save moments by place</h2>
+          <p>Pin photos and notes to where they happened, then revisit your memories directly from the map.</p>
         </article>
         <article class="feature" data-lang="en">
-          <h2>Save photos</h2>
-          <p>Place photo pins where your memories happened and revisit them with date and map context.</p>
+          <h2>Mark places with stickers</h2>
+          <p>Add stickers for cafés, trips, school, and more to make your map feel unmistakably yours.</p>
         </article>
         <article class="feature" data-lang="en">
-          <h2>Add stickers</h2>
-          <p>Decorate meaningful places with emoji stickers and shape a map that feels like yours.</p>
+          <h2>Share a quick thought</h2>
+          <p>Post a text-only thought to the map. Thoughts stay visible for 24 hours and can be shared with friends.</p>
+        </article>
+        <article class="feature" data-lang="en">
+          <h2>Connect with friends</h2>
+          <p>Find people by @ID and see the photos and thoughts they choose to share on your map.</p>
+        </article>
+        <article class="feature" data-lang="en">
+          <h2>Keep talking in chat</h2>
+          <p>Exchange messages and photos, or reply directly to something a friend shared on the map.</p>
+        </article>
+        <article class="feature" data-lang="en">
+          <h2>Choose your map</h2>
+          <p>Switch between standard and satellite maps, with live location following while you move.</p>
         </article>
       </div>
 

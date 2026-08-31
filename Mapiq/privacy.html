@@ -173,35 +173,43 @@
   <main>
     <article class="policy" data-lang="ja">
       <h1>プライバシーポリシー</h1>
-      <p class="updated">最終更新日: 2026年6月16日</p>
+      <p class="updated">最終更新日: 2026年8月31日</p>
 
       <p>本プライバシーポリシーは、Mapiq（以下「本アプリ」）におけるユーザー情報の取り扱いについて説明するものです。</p>
 
       <h2>取得・保存する情報</h2>
       <p>本アプリは、機能提供のために以下の情報を取得または保存する場合があります。</p>
       <ul>
-        <li>アカウント登録・ログインに必要なメールアドレス等の認証情報</li>
-        <li>霧を晴らした地点、移動距離、クエスト進捗、称号、統計情報</li>
-        <li>ユーザーが登録した写真、ステッカー、メモ、登録日時、登録地点</li>
-        <li>通知配信に必要な端末識別子またはFCMトークン</li>
-        <li>広告配信や不正防止、品質改善に必要な端末情報、利用状況、クラッシュ情報等</li>
+        <li>メールアドレス、認証用ユーザーID、利用するログイン方法などのアカウント情報</li>
+        <li>表示名、@ID、プロフィール画像、アカウント作成日時などのプロフィール情報</li>
+        <li>写真、メモ、ステッカー、地点名、つぶやき、投稿日時、登録地点、最後に訪れた日時など、ユーザーが登録したコンテンツ</li>
+        <li>チャットの本文・画像・送信日時・既読状態、公式チャットへのメッセージなどの通信内容</li>
+        <li>フレンド、フレンド申請、公開範囲、ピン留め、通知設定などの利用情報</li>
+        <li>通知配信に必要なFCMトークン、端末に関する情報</li>
+        <li>広告配信、不正防止、サービス維持に必要なIPアドレス、端末識別子、広告データ、アプリ操作情報、クラッシュログ、パフォーマンスデータ等</li>
       </ul>
 
-      <h2>位置情報</h2>
-      <p>本アプリは、訪れた場所の霧を晴らす機能、移動距離の計測、現在地表示、写真・ステッカー登録地点の記録のために、ユーザーの位置情報を使用します。バックグラウンドでの位置情報利用を許可した場合、アプリを閉じている間も位置情報を利用することがあります。</p>
-      <p>位置情報の許可は、端末の設定アプリからいつでも変更できます。ただし、位置情報を無効にした場合、本アプリの主要機能の一部が利用できなくなることがあります。</p>
+      <p>パスワードはFirebase Authenticationによって処理され、開発者が平文のパスワードを取得することはありません。GoogleまたはAppleでログインする場合、各事業者から認証に必要な識別子や、ユーザーが提供を許可した氏名・メールアドレス等を受け取る場合があります。</p>
 
-      <h2>写真・メモ・ステッカー</h2>
-      <p>ユーザーが登録した写真、メモ、ステッカー、登録地点、登録日時は、地図上に表示するために保存されます。写真はFirebase Storageに保存される場合があります。ユーザーが削除操作を行った場合、アプリ上の表示および関連データを削除します。</p>
+      <h2>位置情報</h2>
+      <p>本アプリは、現在地の表示・追従、写真・ステッカー・つぶやきの登録地点の記録、登録したステッカー付近への訪問判定のために、アプリ使用中の位置情報を利用します。写真等を追加する際に地図の中心地点を選んだ場合は、その地点を登録位置として保存します。</p>
+      <p>本アプリは、バックグラウンドで継続的に位置情報を取得することを目的としていません。位置情報の許可は端末の設定アプリからいつでも変更できますが、無効にした場合は現在地や位置に基づく機能を利用できないことがあります。</p>
+
+      <h2>写真・ステッカー・つぶやき</h2>
+      <p>ユーザーが登録した写真、メモ、ステッカー、つぶやき、地点情報、日時は、地図上に表示するためクラウドに保存されます。写真やプロフィール画像はFirebase Storageに保存されます。</p>
+      <p>写真やつぶやきは、ユーザーが選択した公開設定に従ってフレンドへ表示される場合があります。フレンドに公開された投稿には、表示名、プロフィール画像および位置情報が含まれることがあります。つぶやきおよびフレンド向けの一時投稿は原則として24時間表示されます。</p>
+
+      <h2>フレンドとチャット</h2>
+      <p>@ID、表示名、プロフィール画像は、ユーザー検索、フレンド申請、フレンド一覧などで他のユーザーに表示されます。チャットのメッセージや画像は、会話に参加するユーザーへ配信・表示するため保存されます。また、Mapiq公式からのお知らせや、ユーザーから公式アカウントへ送信されたメッセージを保存する場合があります。</p>
 
       <h2>アカウントとクラウド保存</h2>
-      <p>本アプリは、アカウント登録、ログイン、データ保存、通知配信等のためにFirebase Authentication、Cloud Firestore、Firebase Storage、Firebase Cloud Messaging、Cloud Functionsを使用します。これらのサービスでは、Google LLCが提供する基盤上で情報が処理されます。</p>
+      <p>本アプリは、アカウント登録、ログイン、データ保存、同期、通知配信、アカウント削除等のためにFirebase Authentication、Cloud Firestore、Firebase Storage、Firebase Cloud Messaging、Cloud Functionsを使用します。これらのサービスでは、Google LLCが提供する基盤上で情報が処理されます。</p>
 
       <h2>通知</h2>
-      <p>本アプリは、クエスト達成や統計達成などを知らせるため、プッシュ通知を送信する場合があります。通知の許可は、端末の設定アプリからいつでも変更できます。また、アプリ内の通知設定で通知種別を選択できる場合があります。</p>
+      <p>本アプリは、チャット、フレンド申請、フレンド承認、フレンドの投稿などを知らせるプッシュ通知を送信する場合があります。通知の許可は端末の設定アプリから変更でき、アプリ内の通知設定では通知種別ごとに受信のオン・オフを選択できます。</p>
 
       <h2>広告</h2>
-      <p>本アプリは、広告表示のためにGoogle AdMobを使用します。Google Mobile Ads SDKは、広告配信、分析、不正防止、サービス改善などの目的で、IPアドレス、端末識別子、広告データ、アプリ操作情報、クラッシュログ、パフォーマンスデータ等を収集する場合があります。</p>
+      <p>本アプリは、広告表示のためにGoogle AdMobを使用します。Google Mobile Ads SDKは、広告配信、分析、不正防止、サービス改善などの目的で、IPアドレス、端末識別子、広告データ、アプリ操作情報、クラッシュログ、パフォーマンスデータ等を収集する場合があります。端末の広告トラッキングに関する許可は、iOSの設定から変更できます。</p>
       <p>Googleによる情報の取り扱いについては、以下をご確認ください。</p>
       <ul>
         <li><a href="https://policies.google.com/privacy?hl=ja" rel="noopener">Google プライバシーポリシー</a></li>
@@ -209,21 +217,35 @@
         <li><a href="https://firebase.google.com/support/privacy?hl=ja" rel="noopener">Firebaseのプライバシーとセキュリティ</a></li>
       </ul>
 
+      <h2>外部サービス</h2>
+      <p>本アプリでは、機能提供のために次の外部サービスを利用します。各サービスに送信された情報は、それぞれの提供者のプライバシーポリシー等に従って取り扱われます。</p>
+      <ul>
+        <li>Google LLC：Firebase、Googleログイン、Google AdMob</li>
+        <li>Apple Inc.：Appleでサインイン、Apple MapKit、位置情報・地図関連機能</li>
+      </ul>
+      <p><a href="https://www.apple.com/legal/privacy/data/en/sign-in-with-apple/" rel="noopener">Appleでサインインとプライバシー</a></p>
+
       <h2>利用目的</h2>
       <p>取得した情報は、以下の目的で利用します。</p>
       <ul>
+        <li>アカウントの作成・認証・管理</li>
         <li>本アプリの機能提供、データ同期、バックアップ</li>
-        <li>写真、ステッカー、探索状況、クエスト、統計の表示</li>
+        <li>地図、写真、ステッカー、つぶやき、プロフィールの表示</li>
+        <li>フレンド機能、公開設定、チャット、公式からのお知らせの提供</li>
         <li>通知の送信および通知設定の管理</li>
-        <li>広告の表示、不正利用の防止、アプリの品質改善</li>
+        <li>広告の表示、不正利用の防止、障害対応、アプリの品質維持・改善</li>
         <li>お問い合わせ対応</li>
       </ul>
 
       <h2>第三者提供</h2>
-      <p>開発者は、法令に基づく場合を除き、ユーザーの個人情報を第三者に販売しません。ただし、本アプリの提供に必要な範囲で、Firebase、Google AdMob、Apple MapKit等の第三者サービスが情報を処理する場合があります。</p>
+      <p>開発者は、ユーザーの個人情報を販売しません。法令に基づく場合、生命・身体・財産の保護に必要な場合、または本アプリの提供に必要な範囲で委託先が処理する場合を除き、本人の同意なく個人情報を第三者へ提供しません。</p>
+
+      <h2>保存期間と安全管理</h2>
+      <p>情報は、サービス提供、アカウント維持、法令遵守、紛争解決、不正防止に必要な期間保存します。アカウント削除またはコンテンツ削除が行われた場合、関連情報を削除しますが、システムのバックアップや法令上保存が必要な記録には一定期間残ることがあります。</p>
+      <p>本アプリは、通信の暗号化、Firebaseの認証・アクセス制御等を利用して情報の保護に努めます。ただし、インターネット上の通信や保存の完全な安全性を保証するものではありません。</p>
 
       <h2>データの削除</h2>
-      <p>ユーザーは、アプリ内の削除機能により、登録した写真やステッカー等を削除できます。アカウントやクラウド上のデータ削除を希望する場合は、下記のお問い合わせ先までご連絡ください。</p>
+      <p>ユーザーは、アプリ内の削除機能により、登録した写真、ステッカー、つぶやき等を削除できます。また、設定画面の「アカウントを削除」から、アカウントおよび関連するクラウドデータの削除を申請できます。削除できない場合や確認が必要な場合は、下記のお問い合わせ先までご連絡ください。</p>
 
       <h2>子どものプライバシー</h2>
       <p>本アプリは、13歳未満の子どもを主な対象としたものではありません。13歳未満の子どもが利用する場合は、保護者の同意と管理のもとで利用してください。</p>
@@ -238,35 +260,43 @@
 
     <article class="policy" data-lang="en">
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: June 16, 2026</p>
+      <p class="updated">Last updated: August 31, 2026</p>
 
       <p>This Privacy Policy explains how Mapiq handles information when you use the app.</p>
 
       <h2>Information collected or stored</h2>
       <p>The app may collect or store the following information to provide its features:</p>
       <ul>
-        <li>Authentication information such as an email address used for account registration and login</li>
-        <li>Cleared map locations, travel distance, quest progress, titles, and statistics</li>
-        <li>Photos, stickers, notes, creation dates, and location data that you register in the app</li>
-        <li>Device identifiers or FCM tokens needed to deliver push notifications</li>
-        <li>Device information, usage data, crash logs, and performance data needed for ads, fraud prevention, and quality improvement</li>
+        <li>Account information such as your email address, authentication user ID, and sign-in method</li>
+        <li>Profile information such as your display name, @ID, profile image, and account creation date</li>
+        <li>User content such as photos, notes, stickers, place names, map thoughts, posting dates, locations, and last-visited dates</li>
+        <li>Communications such as chat text, images, timestamps, read status, and messages sent to the official Mapiq account</li>
+        <li>Usage information such as friendships, friend requests, sharing choices, pinned posts, and notification preferences</li>
+        <li>FCM tokens and device information needed to deliver push notifications</li>
+        <li>IP address, device identifiers, advertising data, app interaction data, crash logs, and performance data needed for ads, fraud prevention, and service operation</li>
       </ul>
 
-      <h2>Location information</h2>
-      <p>Mapiq uses your location to clear fog from places you visit, measure travel distance, show your current location, and save the location of photos and stickers. If you allow background location access, the app may use location information while the app is not actively open.</p>
-      <p>You can change location permissions at any time in the device Settings app. Some core features may not work properly if location access is disabled.</p>
+      <p>Passwords are processed by Firebase Authentication, and the developer does not receive passwords in plain text. If you sign in with Google or Apple, the app may receive an authentication identifier and information such as your name or email address that you authorize the provider to share.</p>
 
-      <h2>Photos, notes, and stickers</h2>
-      <p>Photos, notes, stickers, locations, and creation dates that you register are stored to display them on your map. Photos may be stored in Firebase Storage. If you delete content in the app, the related app data will be removed from the app display and associated storage.</p>
+      <h2>Location information</h2>
+      <p>Mapiq uses location information while you use the app to show and follow your current location, save the location of photos, stickers, and thoughts, and detect visits near saved stickers. If you choose the center of the map when adding content, that selected location is stored as the content location.</p>
+      <p>The app is not intended to continuously collect location information in the background. You can change location permissions at any time in the device Settings app. Current-location and location-based features may not work if access is disabled.</p>
+
+      <h2>Photos, stickers, and map thoughts</h2>
+      <p>Photos, notes, stickers, thoughts, locations, and dates you register are stored in the cloud so they can be displayed on the map. Photos and profile images are stored in Firebase Storage.</p>
+      <p>Photos and thoughts may be shown to friends according to the sharing choices you make. Shared posts may include your display name, profile image, and location. Thoughts and temporary posts shared with friends are generally displayed for 24 hours.</p>
+
+      <h2>Friends and chat</h2>
+      <p>Your @ID, display name, and profile image are shown to other users in features such as user search, friend requests, and friend lists. Chat messages and images are stored to deliver and display them to conversation participants. The app may also store announcements from Mapiq and messages sent by users to the official Mapiq account.</p>
 
       <h2>Accounts and cloud storage</h2>
-      <p>The app uses Firebase Authentication, Cloud Firestore, Firebase Storage, Firebase Cloud Messaging, and Cloud Functions for account registration, login, data storage, synchronization, and push notifications. These services process information on infrastructure provided by Google LLC.</p>
+      <p>The app uses Firebase Authentication, Cloud Firestore, Firebase Storage, Firebase Cloud Messaging, and Cloud Functions for registration, login, storage, synchronization, push notifications, and account deletion. These services process information on infrastructure provided by Google LLC.</p>
 
       <h2>Notifications</h2>
-      <p>The app may send push notifications for events such as quest completion or statistics achievements. You can change notification permissions in the device Settings app. The app may also provide settings to choose which notification categories you receive.</p>
+      <p>The app may send push notifications for chat messages, friend requests, accepted requests, and friends' posts. You can change permission in the device Settings app and enable or disable each notification category in Mapiq's settings.</p>
 
       <h2>Advertising</h2>
-      <p>The app uses Google AdMob to display ads. Google Mobile Ads SDK may collect information such as IP address, device identifiers, advertising data, app interaction data, crash logs, and performance data for advertising, analytics, fraud prevention, and service improvement purposes.</p>
+      <p>The app uses Google AdMob to display ads. Google Mobile Ads SDK may collect information such as IP address, device identifiers, advertising data, app interaction data, crash logs, and performance data for advertising, analytics, fraud prevention, and service improvement purposes. You can change advertising tracking permission in iOS Settings.</p>
       <p>For more information about Google's data practices, please review:</p>
       <ul>
         <li><a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a></li>
@@ -274,21 +304,35 @@
         <li><a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy and Security</a></li>
       </ul>
 
+      <h2>Third-party services</h2>
+      <p>The app uses the following third-party services to provide its features. Information sent to these services is handled under each provider's privacy policy and terms.</p>
+      <ul>
+        <li>Google LLC: Firebase, Google Sign-In, and Google AdMob</li>
+        <li>Apple Inc.: Sign in with Apple, Apple MapKit, and location and map features</li>
+      </ul>
+      <p><a href="https://www.apple.com/legal/privacy/data/en/sign-in-with-apple/" rel="noopener">Sign in with Apple &amp; Privacy</a></p>
+
       <h2>Purpose of use</h2>
       <p>The information is used for the following purposes:</p>
       <ul>
+        <li>Creating, authenticating, and managing accounts</li>
         <li>Providing app features, data synchronization, and backup</li>
-        <li>Displaying photos, stickers, exploration progress, quests, and statistics</li>
+        <li>Displaying maps, photos, stickers, thoughts, and profiles</li>
+        <li>Providing friend features, sharing controls, chats, and official announcements</li>
         <li>Sending notifications and managing notification settings</li>
-        <li>Displaying ads, preventing fraud, and improving app quality</li>
+        <li>Displaying ads, preventing abuse, resolving failures, and maintaining or improving app quality</li>
         <li>Responding to inquiries</li>
       </ul>
 
       <h2>Sharing with third parties</h2>
-      <p>The developer does not sell your personal information. However, third-party services such as Firebase, Google AdMob, and Apple MapKit may process information as necessary to provide the app.</p>
+      <p>The developer does not sell your personal information. We do not disclose personal information to third parties without your consent, except when required by law, necessary to protect life, safety, or property, or processed by service providers as necessary to operate the app.</p>
+
+      <h2>Retention and security</h2>
+      <p>Information is retained for as long as necessary to provide the service, maintain accounts, comply with law, resolve disputes, and prevent abuse. When an account or content is deleted, related information is deleted, although it may remain for a limited time in system backups or records that must be retained by law.</p>
+      <p>The app uses measures such as encrypted communications and Firebase authentication and access controls to protect information. However, no transmission or storage system can be guaranteed to be completely secure.</p>
 
       <h2>Data deletion</h2>
-      <p>You can delete registered photos and stickers using the app's delete features. If you would like to request deletion of your account or cloud data, please contact us at the email address below.</p>
+      <p>You can delete photos, stickers, thoughts, and other content using the app's delete features. You can also request deletion of your account and related cloud data from “Delete Account” in Settings. If you cannot complete deletion or need assistance, please contact us below.</p>
 
       <h2>Children's privacy</h2>
       <p>The app is not primarily directed to children under the age of 13. If a child under 13 uses the app, it should be under the consent and supervision of a parent or guardian.</p>
